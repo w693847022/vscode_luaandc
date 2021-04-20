@@ -12,6 +12,7 @@ void main()
     cout<<"frequency:"<<counter.QuadPart<<endl;//10000000 微妙级
     SYSTEMTIME systime;
     int i = 10000000;
+    //主循环
     while(true)
     {
         GetLocalTime(&systime);
