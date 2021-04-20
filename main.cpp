@@ -5,28 +5,20 @@ using namespace std;
 static uint64_t frequency;
 void main()
 {
+    //使用滴答数进行计时
     LARGE_INTEGER counter;
-    QueryPerformanceCounter(&counter);
+    QueryPerformanceFrequency(&counter);//每秒滴答数
     frequency = counter.QuadPart;
+    cout<<"frequency:"<<counter.QuadPart<<endl;//10000000 微妙级
     SYSTEMTIME systime;
-    // LuaTest test;
-    // test.Test_1();
     int i = 10000000;
     while(true)
     {
         GetLocalTime(&systime);
-
-        // if(!(i%100))
-        // {
-            QueryPerformanceCounter(&counter);
-            double scaled_freq = (double)frequency/100000;
-            uint64_t count = (double)(counter.QuadPart/scaled_freq);
-            // if((count%10)==0)
-            // {
-            //     cout<<count<<" time:"<<systime.wSecond<<endl;
-            //     //cout<<systime.wSecond<<":"<<" test QueryPerformanceCounter:"<< (double)(counter.QuadPart/scaled_freq)<<endl;
-            // }
-        //}
+        QueryPerformanceCounter(&counter);
+        double scaled_freq = (double)frequency/1000;//转成毫秒级
+        uint64_t count = (double)(counter.QuadPart/scaled_freq);//当前滴答数/每秒滴答数
+        cout<<systime.wSecond<<" "<<count<<endl;//和当前时间一致
         i--;
     }
     getchar();
