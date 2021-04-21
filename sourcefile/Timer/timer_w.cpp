@@ -18,7 +18,7 @@ const Timer_s& Timer_w::Timer_init(Timer_s &timer,int timer_id){
     timer.repeat = 0;
     timer.timeout = 0;
     timer.state = TimerState::stop;
-    cout<<"timer id:"<<timer_id<<" init"<<endl;
+    //cout<<"timer id:"<<timer_id<<" init"<<endl;
     return timer;
 }
 //获取当前的时间
@@ -43,7 +43,7 @@ void Timer_w::Timer_start(Timer_s &timer,UINT64 timerout,int repeat,UINT64 inter
     timer.timeout = timerout+GetCurTime(1000);
     timer.state = TimerState::work;
     timerList.push_back(timer);
-    cout<<"timer id:"<<timer.timer_id<<" start"<<endl;
+    //cout<<"timer id:"<<timer.timer_id<<" start"<<endl;
 }
 
 //停止计时器
@@ -51,7 +51,7 @@ void Timer_w::Timer_stop(Timer_s& timer){
     if(Timer_exists(timer.timer_id))
     {
         timer.state = TimerState::stop;
-        cout<<"timer id:"<<timer.timer_id<<" stop"<<endl;
+        //cout<<"timer id:"<<timer.timer_id<<" stop"<<endl;
     }
 }
 
@@ -64,7 +64,7 @@ void Timer_w::Timer_again(Timer_s &timer,UINT64 timerout,int repeat,UINT64 inter
         timer.repeat = repeat;
         timer.timeout = timerout+GetCurTime(1000);
         timer.state = TimerState::work;
-        cout<<"timer id:"<<timer.timer_id<<" again"<<endl;
+        //cout<<"timer id:"<<timer.timer_id<<" again"<<endl;
     }
 }
 
@@ -95,7 +95,7 @@ void Timer_w::Timer_update(Timer_s& timer){
     {
         Timer_again(timer,timer.interval,timer.repeat,timer.interval,timer.cb);
     }
-    timer.cb();
+    timer.cb(timer);
 }
 
 //计时器主循环

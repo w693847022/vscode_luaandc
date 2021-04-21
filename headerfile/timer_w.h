@@ -2,7 +2,8 @@
 #include<vector>
 #include<iostream>
 using namespace std;
-typedef void (*timer_cb)();//计时器回调的函数指针
+struct Timer_s;
+typedef void (*timer_cb)(Timer_s);//计时器回调的函数指针
 enum TimerState{
     work,
     stop,
