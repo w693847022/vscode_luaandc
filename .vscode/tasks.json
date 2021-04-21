@@ -7,10 +7,13 @@
 			"command": "cl.exe",
 			"args": [
 				"main.cpp",
+				"${workspaceFolder}\\sourcefile\\Timer\\*.cpp",
 				"/Zi",
 				"/EHsc",
 				"/I",
 				"${fileDirname}\\include",
+				"/I",
+				"${fileDirname}\\headerfile",
 				"${fileDirname}\\lib\\lua\\lua.lib",
 			],
 			"options": {
