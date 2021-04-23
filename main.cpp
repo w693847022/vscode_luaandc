@@ -72,6 +72,8 @@ void main()
     InitializeCriticalSection(&csIOLock);
     thread th1(TimerTest1);
     thread th2(TimerTest2);
+
+    
     th1.join();
     th2.join();
 
