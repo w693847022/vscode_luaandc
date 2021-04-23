@@ -14,7 +14,12 @@
             "cwd": "${workspaceFolder}",
             "environment": [],
             "console":"externalTerminal",
-            "preLaunchTask": "C/C++: cl.exe build active file"
+            "preLaunchTask": "C/C++: cl.exe build active file",
+            "windows": {
+                "setupCommands": [
+                    {"text": "-gdb-set follow-fork-mode child"}
+                ]
+            },
         }
     ]
 }
