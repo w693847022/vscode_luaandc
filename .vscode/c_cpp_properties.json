@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/include/**",
-                "${workspaceFolder}/headerfile/**"
+                "${workspaceFolder}/headerfile/**",
+                "${workspaceFolder}/DesignPatternsHeaderFile/**"
             ],
             "defines": [
                 "_DEBUG",

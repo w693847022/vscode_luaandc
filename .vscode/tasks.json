@@ -8,12 +8,15 @@
 			"args": [
 				"main.cpp",
 				"${workspaceFolder}\\sourcefile\\Timer\\*.cpp",
+				"${workspaceFolder}\\DesignPatterns\\*.cpp",
 				"/Zi",
 				"/EHsc",
 				"/I",
 				"${fileDirname}\\include",
 				"/I",
 				"${fileDirname}\\headerfile",
+				"/I",
+				"${fileDirname}\\DesignPatternsHeaderFile",
 				"${fileDirname}\\lib\\lua\\lua.lib",
 			],
 			"options": {
