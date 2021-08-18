@@ -43,6 +43,9 @@
 		"chrono": "cpp",
 		"mutex": "cpp",
 		"stack": "cpp",
-		"queue": "cpp"
-	}
+		"queue": "cpp",
+		"xtree": "cpp",
+		"map": "cpp"
+	},
+	"C_Cpp.errorSquiggles": "Disabled"
 }
